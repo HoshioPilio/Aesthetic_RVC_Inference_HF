@@ -1833,9 +1833,11 @@ def GradioSetup():
     default_weight = names[0] if names else ""
 
     with gr.Blocks(theme=my_applio, title="Applio-RVC-Fork") as app:
-        gr.HTML("<h1> 🍏 Applio-RVC-Fork </h1>")
-        gr.Markdown("More spaces: [RVC_Inference_HF](https://huggingface.co/spaces/r3gm/RVC_Inference_HF), [AICoverGen](https://huggingface.co/spaces/r3gm/AICoverGen), [Ultimate-Vocal-Remover-WebUI](https://huggingface.co/spaces/r3gm/Ultimate-Vocal-Remover-WebUI), [Advanced-RVC-Inference](https://huggingface.co/spaces/r3gm/Advanced-RVC-Inference),")
+        gr.HTML("<h3> 🍏 Applio-RVC-Fork </h3>")
 
+        gr.Markdown("More spaces: [RVC_Inference_HF](https://huggingface.co/spaces/r3gm/RVC_Inference_HF), [AICoverGen](https://huggingface.co/spaces/r3gm/AICoverGen), [Ultimate-Vocal-Remover-WebUI](https://huggingface.co/spaces/r3gm/Ultimate-Vocal-Remover-WebUI), [Advanced-RVC-Inference](https://huggingface.co/spaces/r3gm/Advanced-RVC-Inference)")
+        
+        gr.Markdown("Duplicate the space to select the language")
         gr.Markdown(
             "[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-sm-dark.svg)](https://huggingface.co/spaces/r3gm/Aesthetic_RVC_Inference_HF?duplicate=true)\n\n"
         ) 

@@ -2451,7 +2451,8 @@ def GradioSetup():
                         outputs=[advanced_settings_batch],
                     )
 
-            with gr.TabItem(i18n("Train")):
+            with gr.TabItem(i18n("Train"), visible=False):
+            
                 with gr.Accordion(label=i18n("Step 1: Processing data")):
                     with gr.Row():
                         with gr.Column():

@@ -1,13 +1,10 @@
 ---
 title: Aesthetic RVC Inference HF
-emoji: 🦀
-colorFrom: pink
-colorTo: yellow
+emoji: 🍏😺
+colorFrom: green
+colorTo: green
 sdk: gradio
-sdk_version: 3.47.1
+sdk_version: 3.43.2
 app_file: app.py
 pinned: false
-license: mit
 ---
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference

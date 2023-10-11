@@ -2909,6 +2909,7 @@ def GradioSetup():
                 )
 
             with gr.TabItem(i18n("Resources")):
+                gr.Markdown(f"Limit download size is {os.getenv('MAX_DOWNLOAD_SIZE')} MB, duplicate the space for modify the limit")
                 resources.download_model()
                 resources.download_backup()
                 resources.download_dataset(trainset_dir4)

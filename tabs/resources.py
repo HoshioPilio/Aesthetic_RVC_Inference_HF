@@ -158,12 +158,27 @@ def get_mediafire_download_link(url):
     else:
         return None
 
+def delete_large_files(directory_path, max_size_megabytes):
+    for filename in os.listdir(directory_path):
+        file_path = os.path.join(directory_path, filename)
+        if os.path.isfile(file_path):
+            size_in_bytes = os.path.getsize(file_path)
+            size_in_megabytes = size_in_bytes / (1024 * 1024)  # Convert bytes to megabytes
+
+            if size_in_megabytes > max_size_megabytes:
+                print("###################################")
+                print(f"Deleting s*** {filename} (Size: {size_in_megabytes:.2f} MB)")
+                os.remove(file_path)
+                print("###################################") 
+
 def download_from_url(url):
     file_path = find_folder_parent(now_dir, "assets")
     print(file_path)
     zips_path = os.path.join(file_path, "assets", "zips")
     print(zips_path)
     os.makedirs(zips_path, exist_ok=True)
+    print(f"Limit download size in MB {os.getenv('MAX_DOWNLOAD_SIZE')}, duplicate the space for modify the limit")
+
     if url != "":
         print(i18n("Downloading the file: ") + f"{url}")
         if "drive.google.com" in url:
@@ -211,7 +226,7 @@ def download_from_url(url):
                         progress_percent = int((progress / total_size_in_bytes) * 100)
                         num_dots = int((progress / total_size_in_bytes) * progress_bar_length)
                         progress_bar = "[" + "." * num_dots + " " * (progress_bar_length - num_dots) + "]"
-                        print(f"{progress_percent}% {progress_bar} {progress}/{total_size_in_bytes}  ", end="\r")
+                        #print(f"{progress_percent}% {progress_bar} {progress}/{total_size_in_bytes}  ", end="\r")
                         if progress_percent == 100:
                             print("\n")
             else:
@@ -337,6 +352,8 @@ def download_from_url(url):
                 realPath = os.path.join(currentPath, Files)
                 os.rename(realPath, nameFile + "." + extensionFile)
 
+        delete_large_files(zips_path, int(os.getenv("MAX_DOWNLOAD_SIZE")))
+        
         os.chdir(file_path)
         print(i18n("Full download"))
         return "downloaded"

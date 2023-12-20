@@ -1836,17 +1836,11 @@ def GradioSetup():
     default_weight = names[0] if names else ""
 
     with gr.Blocks(theme=my_applio, title="Applio-RVC-Fork") as app:
-        gr.Markdown("🍏 Applio-RVC-Fork")
-
-        gr.Markdown("More spaces: [RVC_HF](https://huggingface.co/spaces/r3gm/RVC_HF), [AICoverGen](https://huggingface.co/spaces/r3gm/AICoverGen), [Ultimate-Vocal-Remover-WebUI](https://huggingface.co/spaces/r3gm/Ultimate-Vocal-Remover-WebUI), [Advanced-RVC-Inference](https://huggingface.co/spaces/r3gm/Advanced-RVC-Inference)")
-        
-        gr.Markdown("Duplicate the space to select the language")
-        gr.Markdown(
-            "[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-sm-dark.svg)](https://huggingface.co/spaces/r3gm/Aesthetic_RVC_Inference_HF?duplicate=true)\n\n"
-        ) 
+        gr.Markdown("🍏 Aesthetic_RVC_Inference_HF")
+      ) 
         
         with gr.Tabs():
-            with gr.TabItem(i18n("Model Inference")):
+            with gr.TabItem(i18n("Main Tab")):
                 with gr.Row():
                     sid0 = gr.Dropdown(
                         label=i18n("Inferencing voice:"),

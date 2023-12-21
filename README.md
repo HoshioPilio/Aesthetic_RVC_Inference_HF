@@ -1,11 +1,9 @@
 ---
 title: Aesthetic RVC Inference HF
-emoji: 🍏😺
-colorFrom: green
-colorTo: green
-sdk: gradio
 
 ---
+\
+
 
 
 <div align="center">
@@ -24,7 +22,7 @@ A fork of an easy-to-use SVC framework based on VITS with top1 retrieval 💯. I
   
 [![Licence](https://img.shields.io/github/license/liujing04/Retrieval-based-Voice-Conversion-WebUI?style=for-the-badge)](https://github.com/liujing04/Retrieval-based-Voice-Conversion-WebUI/blob/main/%E4%BD%BF%E7%94%A8%E9%9C%80%E9%81%B5%E5%AE%88%E7%9A%84%E5%8D%8F%E8%AE%AE-LICENSE.txt)
 
-[![Huggingface](https://img.shields.io/badge/🤗%20-Spaces-yellow.svg?style=for-the-badge)](https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/)
+[![Huggingface](https://img.shields.io/badge/🤗%20-Spaces-yellow.svg?style=for-the-badge)]([https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/](https://huggingface.co/spaces/r3gm/Aesthetic_RVC_Inference_HF))
 
 
 

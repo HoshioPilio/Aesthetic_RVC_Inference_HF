@@ -2971,11 +2971,11 @@ def GradioSetup():
         return app
 
 
-def GradioRun(app):
-    share_gradio_link = config.iscolab or config.paperspace
-    concurrency_count = 511
-    max_size = 1022
-
+if (
+        config.iscolab or config.paperspace
+    ):  # Share gradio link for colab and paperspace (FORK FEATURE)
+        app.queue(concurrency_count=511, max_size=1022).launch(share=True)
+    
     if config.iscolab or config.paperspace:
         app.queue(concurrency_count=concurrency_count, max_size=max_size).launch(
             favicon_path="./assets/images/icon.png",
@@ -2983,7 +2983,14 @@ def GradioRun(app):
     else:
         app.queue(concurrency_count=concurrency_count, max_size=max_size).launch(
             favicon_path="./assets/images/icon.png",
+    else:
+        app.queue(concurrency_count=511, max_size=1022).launch(
+            server_name="0.0.0.0",
+            inbrowser=not config.noautoopen,
+            server_port=config.listen_port,
+            quiet=False,
         )
+        
 
 
 if __name__ == "__main__":

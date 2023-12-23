@@ -1836,8 +1836,7 @@ def GradioSetup():
     default_weight = names[0] if names else ""
 
     with gr.Blocks(theme=my_applio, title="Applio-RVC-Fork") as app:
-        gr.Markdown("🍏 Aesthetic_RVC_Inference_HF")
-      ) 
+        gr.Markdown("🍏 Aesthetic_RVC_Inference_HF A.K.A Applio-RVC-Fork") 
         
         with gr.Tabs():
             with gr.TabItem(i18n("Main Tab")):
